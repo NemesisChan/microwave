@@ -123,7 +123,7 @@ export default {
 <style>
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
-  font-size: 28px;
+  font-size: 20px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -145,7 +145,7 @@ span.unit {
 
 .input_item {
   padding: 0px 5px 0px 0px;
-  font-size: 28px;
+  font-size: 20px;
   width: 100px;
   text-align: right;
   border-radius: 3px;
@@ -164,7 +164,7 @@ span.unit {
 }
 
 .output {
-  font-size: 32px;
+  font-size: 20px;
   padding: 0 0 20px 0;
 }
 
