@@ -3,11 +3,7 @@
     <p class="oshietekun">電子レンジ加熱時間おしえて君</p>
     <div id="input_item">
       <select id="watt" class="input_item" @change="calculate()" v-model="selected">
-        <option
-          v-for="option in options"
-          v-bind:value="option.value"
-          v-bind:key="option.text"
-        >{{ option.text }}</option>
+        <option v-for="option in options" v-bind:key="option.text">{{ option.text }}</option>
       </select>
       <span class="unit">W で</span>
       <input
@@ -70,18 +66,18 @@
 export default {
   data() {
     return {
-      selected: "500",
+      selected: 500,
       options: [
-        { text: "100", value: "100" },
-        { text: "200", value: "200" },
-        { text: "500", value: "500" },
-        { text: "600", value: "600" },
-        { text: "700", value: "700" },
-        { text: "800", value: "800" },
-        { text: "900", value: "900" },
-        { text: "1000", value: "1000" },
-        { text: "1200", value: "1200" },
-        { text: "1500", value: "1500" }
+        { text: "100", value: 100 },
+        { text: "200", value: 200 },
+        { text: "500", value: 500 },
+        { text: "600", value: 600 },
+        { text: "700", value: 700 },
+        { text: "800", value: 800 },
+        { text: "900", value: 900 },
+        { text: "1000", value: 1000 },
+        { text: "1200", value: 1200 },
+        { text: "1500", value: 1500 }
       ],
       items: [
         { watt: 100, minute: 15, second: 0 },
@@ -95,17 +91,14 @@ export default {
         { watt: 1200, minute: 1, second: 15 },
         { watt: 1500, minute: 1, second: 0 }
       ],
-      defaultWatt: "500",
       defaultMinute: 3,
       defaultSecond: 0
     };
   },
 
-  watch: {},
-
   methods: {
     calculate: function() {
-      const watt = parseInt(document.getElementById("watt").value);
+      const watt = document.getElementById("watt").value;
       const minute = parseInt(document.getElementById("minute").value);
       const second = parseInt(document.getElementById("second").value);
       const ans = watt * (minute * 60 + second);
